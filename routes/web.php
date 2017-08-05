@@ -12,12 +12,16 @@
 */
 
 Route::get('/', function () {
-	$tasks=   [
-        'Go to store',
-        'Buy some eggs',
-        'Make egg-poach'
-    ];
+	$tasks= DB::table('tasks')->get(); 
+	//return $tasks;
+    return view('welcome', compact('tasks')); //passing the whole array
+});
 
-    return view('welcome', compact('tasks')
-    );
+
+Route::get('/tasks/{id}', function ($id) {
+	//dd($id);
+	$task= DB::table('tasks')->find($id);
+	dd($task);
+	//return $tasks;
+    //return view('welcome', compact('tasks')); //passing the whole array
 });

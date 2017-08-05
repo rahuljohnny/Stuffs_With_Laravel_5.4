@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
 <body>
-	<head>
-		<h4>
-			<ul>
-			    @foreach ($tasks as $task)
-			    <li>
-			    	{{$task }}			    	
-			   	</li>
-				@endforeach 
-			</ul>
-		</h4>
-	</head>
+	<ul>
+	    @foreach ($tasks as $task)
+
+	    <li>{{ $task->body }}</li>
+	    <li>{{ $task->id }}</li>
+		@endforeach 
+	</ul>
+
 </body>
 </html>
